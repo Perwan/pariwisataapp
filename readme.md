@@ -1,4 +1,4 @@
-# Sisrem Informasi Pariwisata dan Travel
+# Sistem Informasi Pariwisata dan Travel
 Sistem Informasi Pariwisata dan Travel bertujuan untuk membuat para pelanggan dapat melihat destinasi wisata yang ingin mereka kunjungi melalui aplikasi disertai dengan alat akomodasi seperti minibus dan bus.
 
 # User
