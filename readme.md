@@ -9,27 +9,28 @@ Sistem Informasi Pariwisata dan Travel bertujuan untuk membuat para pelanggan da
 Admin :
 - Login
 - Input data objek wisata
-- Input alat transportasi
-- Menampilkan ketersediaan alat transportasi
-- Menampilkan informasi :
-    * Harga perjalanan objek wisata
-    * Harga sewa bus dan minibus
-    * Fasilitas 
-- Menerima pesanan
-    * Notif bahwa perincian pesanan
+- Input data alat transportasi
+- Jika ada perubahan tentang harga dan destinasi wisata maka harus di update 
+- Menerima pesanan dari customer
+    * Notif perincian pesanan
+- Konfirmasi terima pembayaran
+
 Owner :
 - Login
 - Cek rating objek wisata
-- Cek kersediaan alat transportasi
+- Cek ketersediaan alat transportasi
 ## Mobile
 Customer :
 - Login / Sign Up
-- Melihat objek wisata
-    * Cek Harga
+- Menampilkan informasi :
+    * Harga perjalanan objek wisata
+    * Fasilitas
+- Memilih objek wisata 
+- Melihat ketersediaan alat transportasi
+    * Harga sewa bus dan minibus
 - Memilih alat transportasi
     * Bus 
     * Minibus
 - Kirim rincian pesanan
     * Notif ke bagian admin
 - Konfirmasi pembayaran
-
