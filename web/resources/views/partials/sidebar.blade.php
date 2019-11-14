@@ -2,7 +2,7 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="{{ route("home") }}" class="brand-link">
-        <img src="{{ asset("dist/img/AdminLTELogo.png") }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+        <img src="{{ asset("dist/img/png.png") }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
             style="opacity: .8">
         <span class="brand-text font-weight-light">Travel & Pariwisata</span>
     </a>
@@ -12,7 +12,7 @@
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">
-                <img src="{{ asset("dist/img/user2-160x160.jpg") }}" class="img-circle elevation-2" alt="User Image">
+                <img src="{{ asset("dist/img/profile.jpg") }}" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
                 <a href="" class="d-block">
@@ -28,7 +28,7 @@
             with font-awesome or any other icon font library -->
                 <li class="nav-item">
                     <a href="" class="nav-link">
-                        <i class="nav-icon fas fa-briefcase"></i>
+                        <i class="nav-icon fa fa-chart-line"></i>
                         <p>
                             Transaksi
                         </p>
@@ -36,7 +36,7 @@
                 </li>
                 <li class="nav-item">
                     <a href="{{ route("wisata.index") }}" class="nav-link">
-                        <i class="nav-icon fas fa-briefcase"></i>
+                        <i class="nav-icon fa fa-air-freshener"></i>
                         <p>
                             Objek Wisata
                         </p>
@@ -44,7 +44,7 @@
                 </li>
                 <li class="nav-item">
                     <a href="" class="nav-link">
-                        <i class="nav-icon fas fa-briefcase"></i>
+                        <i class="nav-icon fas fa-bus"></i>
                         <p>
                            Alat Transportasi
                         </p>
@@ -52,7 +52,7 @@
                 </li>
                 <li class="nav-item">
                     <a href="" class="nav-link">
-                        <i class="nav-icon fas fa-briefcase"></i>
+                        <i class="nav-icon fas fa-address-card"></i>
                         <p>
                             History Pesanan
                         </p>
