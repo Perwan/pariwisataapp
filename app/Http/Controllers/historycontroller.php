@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\history;
+
 class historycontroller extends Controller
 {
     /**
@@ -25,7 +25,6 @@ class historycontroller extends Controller
     public function create()
     {
         //
-        return view ("history.form");
     }
 
     /**
@@ -48,10 +47,8 @@ class historycontroller extends Controller
     public function show($id)
     {
         //
-        
+        return view('history.form');
     }
-
-    
 
     /**
      * Show the form for editing the specified resource.

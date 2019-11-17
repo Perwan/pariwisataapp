@@ -14,8 +14,8 @@ class wisatacontroller extends Controller
      */
     public function index()
     {
-        
-        return view('wisata.list');
+        $data = wisata::all();
+        return view('wisata.list',['data,$data']);
     }
 
     /**
@@ -34,11 +34,17 @@ class wisatacontroller extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store()
+    public function store(Request $request)
     {
-        
+        $request->validate([
+            'kodekendaraan' =>'required|max:20',
+            'harga'=>'required|digits_between:4,6|numeric'
+        ]);
+        Menu::create($request->except("_token"));
 
-        return view('wisata.index');
+        $request->session()->flash('info','Berhasil tambah data menu');
+
+        return redirect()->route('wisata.index');
     }
 
     /**
@@ -49,9 +55,9 @@ class wisatacontroller extends Controller
      */
     public function show($id)
     {
-        
+        $data = wisata::find($id);
 
-        return view('wisata.form');
+        return view('wisata.form',compact('data'));
     }
 
     /**
@@ -73,9 +79,23 @@ class wisatacontroller extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update()
+    public function update(Request $request, $id)
     {
+<<<<<<< HEAD:app/Http/Controllers/wisatacontroller.php
         return view('wisata.index');
+=======
+        $request->validate([
+            'kodekendaraan' =>'required|max:20',
+            'harga'=>'required|digits_between:4,6|numeric'
+        ]);
+
+        Menu::where('id',$id)
+            ->update($request->except(['_token','_method']));
+
+        $request->session()->flash('info','Berhasil ubah data menu');
+
+        return redirect()->route('wisata.index');
+>>>>>>> 369cd9c4ab68a27c7cc0de412f0ec37b5508eb8d:web/web/app/Http/Controllers/wisatacontroller.php
     }
 
     /**
@@ -86,9 +106,8 @@ class wisatacontroller extends Controller
      */
     public function destroy($id)
     {
-        
-         return view('wisata.index');
+        Menu::destroy($id);
+         return redirect()->route('wisata.index')
+        ->with('info','Berhasil hapus data menu');
     }
-    
-
 }

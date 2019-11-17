@@ -37,35 +37,37 @@
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th>Kode Wisata</th>
-                            <th>Nama Wisata</th>
-                            <th>Lokasi</th>
-                            <th>Status</th>
+                            <th>Kode Kendaraan</th>
+                            <th>Type Kendaraan</th>
+                            <th>Seat</th>
+                            <th>Harga</th>
                             <th colspan="2">Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                       
+                        @foreach ($data as $item)
                         <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td><a href="{{ route("wisata.create") }}" class="btn btn-warning btn-block"><i class="fa fa-pencil-alt"></i>Ubah</a></td>
+                            <td>{{ $loop->iteration + (10*($data->currentPage()-1)) }}</td>
+                            <td>{{ $item->kodekendaraan }}</td>
+                            <td>{{ $item->type }}</td>
+                            <td>{{ $item->seat }}</td>
+                            <td>{{ $item->harga }}</td>
+                            <td><a href="{{ route('wisata.show',[$item->id]) }}" class="btn btn-warning btn-block"><i class="fa fa-pencil-alt"></i>Ubah</a></td>
                             <td>
-                                <form action="" method="">
-
+                                <form action="{{ route('wisata.destroy',[$item->id]) }}" method="POST">
+                                    @method('DELETE')
+                                    @csrf
                                     <button class="btn btn-danger btn-block">
                                             <i class="fa fa-trash">Hapus</i>
                                     </button>
                                 </form>
                             </td>
                         </tr>
-                     
+                        @endforeach
                     </tbody>
                 </table>
                 <div class="float-right mt-2">
-                  
+                    {{ $data->links() }}
                 </div>
             </div>
         </div>
