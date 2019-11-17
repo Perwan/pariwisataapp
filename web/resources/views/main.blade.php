@@ -18,7 +18,7 @@
     <!-- JQVMap -->
     <link rel="stylesheet" href="{{ asset("plugins/jqvmap/jqvmap.min.css") }}">
     <!-- Theme style -->
-    <link rel="stylesheet" href="{{ asset("dist/css/adminlte.min.css") }} ">
+    <link rel="stylesheet" href="{{ asset("dist/css/adminlte.min.css") }}">
     <!-- overlayScrollbars -->
     <link rel="stylesheet" href="{{ asset("plugins/overlayScrollbars/css/OverlayScrollbars.min.css") }}">
     <!-- Daterange picker -->
@@ -80,7 +80,7 @@
     <!-- Summernote -->
     <script src="{{ asset("plugins/summernote/summernote-bs4.min.js") }}"></script>
     <!-- overlayScrollbars -->
-    <script src="{{ asset("plugins/summernote/summernote-bs4.min.js") }}"></script>
+    <script src="{{ asset("plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js") }}"></script>
     <!-- AdminLTE App -->
     <script src="{{ asset("dist/js/adminlte.js") }}"></script>
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->

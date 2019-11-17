@@ -18,11 +18,8 @@
         </div>
     </section>
     <section class="content">
-        @if($message= session('info'))
-            <div class="alert alert-success">
-                <i class="fa fa-info-circle"></i>{{ $message }}
-            </div>
-        @endif
+       
+        
         <div class="card">
             <div class="card-header bg-primary text-white">
                 <h3 class="card-title">List Kendaraan</h3>
@@ -45,27 +42,30 @@
                         </tr>
                     </thead>
                     <tbody>
-                       
+                        
                         <tr>
                             <td></td>
                             <td></td>
                             <td></td>
                             <td></td>
-                            <td><a href="{{ route("kendaraan.create") }}" class="btn btn-warning btn-block"><i class="fa fa-pencil-alt"></i>Ubah</a></td>
                             <td>
                                 <form action="" method="">
 
+                            <td><a href="{{ route('kendaraan.create') }}" class="btn btn-warning btn-block"><i class="fa fa-pencil-alt"></i>Ubah</a></td>
+                            <td>
+                                <form action="{{ route('kendaraan.index') }}">
+                                    
                                     <button class="btn btn-danger btn-block">
                                             <i class="fa fa-trash">Hapus</i>
                                     </button>
                                 </form>
                             </td>
                         </tr>
-                     
+                      
                     </tbody>
                 </table>
                 <div class="float-right mt-2">
-                  
+                    
                 </div>
             </div>
         </div>

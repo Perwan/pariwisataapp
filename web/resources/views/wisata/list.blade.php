@@ -34,9 +34,9 @@
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th>Kode Kendaraan</th>
-                            <th>Type Kendaraan</th>
-                            <th>Seat</th>
+                            <th>Kode Wisata</th>
+                            <th>Nama Wisata</th>
+                            <th>Lokasi</th>
                             <th>Harga</th>
                             <th colspan="2">Action</th>
                         </tr>
@@ -52,7 +52,7 @@
 
                             <td><a href="{{ route('wisata.create') }}" class="btn btn-warning btn-block"><i class="fa fa-pencil-alt"></i>Ubah</a></td>
                             <td>
-                                <form action="{{ route('wisata.index') }}">
+                                <form action="{{ route('wisata.index') }}" method="">
                                     
                                     <button class="btn btn-danger btn-block">
                                             <i class="fa fa-trash">Hapus</i>

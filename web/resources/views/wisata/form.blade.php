@@ -28,22 +28,27 @@
                     @csrf
                    
                     <div class="form-group">
-                        <label for="kodekendaraan">Kode Kendaraan</label>
-                        <input type="text" class="form-control @error('nama') is-invalid @enderror" name="kodekendaraan" value="{{ (isset($data)?$data->kodekendaraan:old('kodekendaraan')) }}" maxlength="20">
-                        @error('kodekendaraan')
+                        <label for="kodewisata">Kode Wisata</label>
+                        <input type="text" class="form-control @error('namkodea') is-invalid @enderror" name="kodewisata" value="" maxlength="20">
+                        @error('kodewisata')
                             <div class="invalid-feedback">
                                 {{ $message }}
                             </div>
                         @enderror
                     </div>
                     <div class="form-group">
-                        <label for="type">Type Kendaraan</label>
-                        
+                        <label for="nama">Nama Wisata</label>
+                        <input type="text" class="form-control @error('nama') is-invalid @enderror" name="nama" value="" >
+                        @error('nama')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
                     </div>
                     <div class="form-group">
-                        <label for="seat">Seat</label>
-                        <input type="text" class="form-control @error('seat') is-invalid @enderror" name="seat" value="{{ (isset($data)?$data->seat:old('seat')) }}" maxlength="6">
-                        @error('seat')
+                        <label for="lokasi">Lokasi</label>
+                        <input type="text" class="form-control @error('lokasi') is-invalid @enderror" name="lokasi" value="" >
+                        @error('lokasi')
                             <div class="invalid-feedback">
                                 {{ $message }}
                             </div>

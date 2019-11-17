@@ -24,48 +24,24 @@
                 <h3 class="card-title">Form History</h3>
             </div>
             <div class="card-body">
-                <form action="" method="POST" autocomplete="off">
-                    @csrf
+            <thead>
+                        <tr>
+                            <ul>Tanggal Pemesanan</ul>
+                            <ul>Kode Wisata</ul>
+                            <ul>Nama Wisata</ul>
+                            <ul>Lama Kunjungan</ul>
+                            <ul></ul>
+                            <ul>Alat transportasi</ul>
+                            <ul>Seat</ul>
+                            <ul>Harga</ul>
+                            
+                        </tr>
+                        <div class="form-group float-right">
                    
-                    <div class="form-group">
-                        <label for="kodekendaraan">Kode History</label>
-                        <input type="text" class="form-control @error('kode') is-invalid @enderror" name="kodekendaraan" value="" maxlength="20">
-                        @error('kodekendaraan')
-                            <div class="invalid-feedback">
-                                {{ $message }}
-                            </div>
-                        @enderror
+                        <a href="{{ route("kendaraan.index") }}" class="btn btn-danger"><i class="fa fa-arrow-left"></i> Kembali</a>
                     </div>
-                    <div class="form-group">
-                        <label for="type">Type History</label>
-                        <input type="text" name="type" class="form-control @error('type') is-invalid @enderror" id="" maxlength="100">
-                        @error('namakendaraan')
-                            <div class="invalid-feedback">
-                                {{ $message }}
-                            </div>
-                        @enderror
-                    </div>
-                    <div class="form-group">
-                        <label for="seat">Seat</label>
-                        <input type="text" class="form-control @error('seat') is-invalid @enderror" name="seat" value="" maxlength="100">
-                        @error('seat')
-                            <div class="invalid-feedback">
-                                {{ $message }}
-                            </div>
-                        @enderror
-                           
-                           
-                    </div>
-                    <div class="form-group">
-                        <label for="harga">Harga</label>
-                        <input type="text" class="form-control" name="harga" value="" >
-                       
-                    </div>
-                    <div class="form-group float-right">
-                    <a href="{{ route("kendaraan.index") }}" class="btn btn-success"><i class="fa fa-save"></i>Simpan</a>
-                        <a href="{{ route("kendaraan.index") }}" class="btn btn-danger"><i class="fa fa-arrow-left"></i>Batal</a>
-                    </div>
-                </form>
+                    </thead>
+                
             </div>
         </div>
     </div>
