@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\wisata;
+use App\kendaraan;
 
-class wisatacontroller extends Controller
+class kendaraancontroller extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class wisatacontroller extends Controller
      */
     public function index()
     {
-        
-        return view('wisata.list');
+        //
+        return view('kendaraan.list');
     }
 
     /**
@@ -25,7 +25,8 @@ class wisatacontroller extends Controller
      */
     public function create()
     {
-        return view('wisata.form');
+        //
+        return view('kendaraan.form');
     }
 
     /**
@@ -34,11 +35,10 @@ class wisatacontroller extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store()
+    public function store(Request $request)
     {
-        
-
-        return view('wisata.index');
+        //
+        return view('kendaraan.index');
     }
 
     /**
@@ -49,9 +49,8 @@ class wisatacontroller extends Controller
      */
     public function show($id)
     {
-        
-
-        return view('wisata.form');
+        //
+        return view('kendaraan.form');
     }
 
     /**
@@ -63,7 +62,6 @@ class wisatacontroller extends Controller
     public function edit($id)
     {
         //
-        
     }
 
     /**
@@ -73,9 +71,10 @@ class wisatacontroller extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update()
+    public function update(Request $request, $id)
     {
-        return view('wisata.index');
+        //
+        return view('kendaraan.index');
     }
 
     /**
@@ -86,9 +85,7 @@ class wisatacontroller extends Controller
      */
     public function destroy($id)
     {
-        
-         return view('wisata.index');
+        //
+        return view('kendaraan.index');
     }
-    
-
 }

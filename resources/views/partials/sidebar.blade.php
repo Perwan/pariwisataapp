@@ -26,14 +26,7 @@
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <!-- Add icons to the links using the .nav-icon class
             with font-awesome or any other icon font library -->
-                <li class="nav-item">
-                    <a href="" class="nav-link">
-                        <i class="nav-icon fa fa-chart-line"></i>
-                        <p>
-                            Transaksi
-                        </p>
-                    </a>
-                </li>
+               
                 <li class="nav-item">
                     <a href="{{ route("wisata.index") }}" class="nav-link">
                         <i class="nav-icon fa fa-air-freshener"></i>
@@ -43,7 +36,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="" class="nav-link">
+                    <a href="{{ route("kendaraan.index") }}" class="nav-link">
                         <i class="nav-icon fas fa-bus"></i>
                         <p>
                            Alat Transportasi
@@ -51,10 +44,10 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="" class="nav-link">
+                    <a href="{{ route("history.index") }}" class="nav-link">
                         <i class="nav-icon fas fa-address-card"></i>
                         <p>
-                            History Pesanan
+                            History Transaksi
                         </p>
                     </a>
                 </li>

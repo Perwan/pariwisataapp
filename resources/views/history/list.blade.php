@@ -1,17 +1,17 @@
 @extends('main')
 
-@section('title','List Kendaraan')
+@section('title','List History')
 
 @section('content')
 <div class="content-wrapper">
     <section class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
-                <div class="col-6"><h1>Kendaraan</h1></div>
+                <div class="col-6"><h1>History</h1></div>
                 <div class="col-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="{{ route("home") }}">Home</a></li>
-                        <li class="breadcrumb-item active">List Kendaraan</li>
+                        <li class="breadcrumb-item active">List History</li>
                     </ol>
                 </div>
             </div>
@@ -25,23 +25,17 @@
         @endif
         <div class="card">
             <div class="card-header bg-primary text-white">
-                <h3 class="card-title">List Kendaraan</h3>
+                <h3 class="card-title">List History</h3>
             </div>
             <div class="card-body">
-                <div class="float-right mb-2">
-                    <a href="{{ route('kendaraan.create') }}" class="btn btn-success">
-                        <i class="fa fa-plus">Tambah</i>
-                    </a>
-                </div>
+                
                 <table class="table table-bordered">
                     <thead>
                         <tr>
-                            <th>No</th>
-                            <th>Kode Kendaraan</th>
-                            <th>Type Kendaraan</th>
-                            <th>Seat</th>
-                            <th>Harga</th>
-                            <th colspan="2">Action</th>
+                            <th>Tanggal</th>
+                            <th>Kode Wisata</th>
+                            <th>Nama Wisata</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -50,19 +44,15 @@
                             <td></td>
                             <td></td>
                             <td></td>
-                            <td></td>
-                            <td><a href="{{ route("kendaraan.create") }}" class="btn btn-warning btn-block"><i class="fa fa-pencil-alt"></i>Ubah</a></td>
-                            <td>
-                                <form action="" method="">
-
-                                    <button class="btn btn-danger btn-block">
-                                            <i class="fa fa-trash">Hapus</i>
-                                    </button>
-                                </form>
+                            <td style="text-align:center; border: 1px "><a href="{{ route("history.create") }}" class="btn btn-warning"><i class="fa fa-eye"> View</i></a>
                             </td>
                         </tr>
-                     
+                        
                     </tbody>
+                    <div class="form-group float-right">
+           
+                        <a href="{{ route("home") }}" class="btn btn-danger"><i class="fa fa-arrow-left"></i> Home</a>
+                    </div>
                 </table>
                 <div class="float-right mt-2">
                   

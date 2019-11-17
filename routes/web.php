@@ -16,3 +16,5 @@ Route::get('/', function () {
 })->name("home");
 
 Route::resource('wisata','wisatacontroller');
+Route::resource('kendaraan','kendaraancontroller');
+Route::resource('history','historycontroller');

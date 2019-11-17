@@ -62,7 +62,7 @@
                        
                     </div>
                     <div class="form-group float-right">
-                        <button type="submit" class="btn btn-success"><i class="fa fa-save"></i>Simpan</button>
+                    <a href="{{ route("wisata.index") }}" class="btn btn-success"><i class="fa fa-save"></i>Simpan</a>
                         <a href="{{ route("wisata.index") }}" class="btn btn-danger"><i class="fa fa-arrow-left"></i>Batal</a>
                     </div>
                 </form>
