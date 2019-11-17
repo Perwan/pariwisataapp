@@ -25,6 +25,7 @@ class historycontroller extends Controller
     public function create()
     {
         //
+        return view('history.form');
     }
 
     /**

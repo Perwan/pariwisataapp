@@ -14,8 +14,8 @@ class wisatacontroller extends Controller
      */
     public function index()
     {
-        $data = wisata::all();
-        return view('wisata.list',['data,$data']);
+       
+        return view('wisata.list');
     }
 
     /**
@@ -36,15 +36,8 @@ class wisatacontroller extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'kodekendaraan' =>'required|max:20',
-            'harga'=>'required|digits_between:4,6|numeric'
-        ]);
-        Menu::create($request->except("_token"));
 
-        $request->session()->flash('info','Berhasil tambah data menu');
-
-        return redirect()->route('wisata.index');
+        return view('wisata.index');
     }
 
     /**
@@ -55,9 +48,7 @@ class wisatacontroller extends Controller
      */
     public function show($id)
     {
-        $data = wisata::find($id);
-
-        return view('wisata.form',compact('data'));
+        return view('wisata.form');
     }
 
     /**
@@ -81,21 +72,7 @@ class wisatacontroller extends Controller
      */
     public function update(Request $request, $id)
     {
-<<<<<<< HEAD:app/Http/Controllers/wisatacontroller.php
         return view('wisata.index');
-=======
-        $request->validate([
-            'kodekendaraan' =>'required|max:20',
-            'harga'=>'required|digits_between:4,6|numeric'
-        ]);
-
-        Menu::where('id',$id)
-            ->update($request->except(['_token','_method']));
-
-        $request->session()->flash('info','Berhasil ubah data menu');
-
-        return redirect()->route('wisata.index');
->>>>>>> 369cd9c4ab68a27c7cc0de412f0ec37b5508eb8d:web/web/app/Http/Controllers/wisatacontroller.php
     }
 
     /**
@@ -106,8 +83,6 @@ class wisatacontroller extends Controller
      */
     public function destroy($id)
     {
-        Menu::destroy($id);
-         return redirect()->route('wisata.index')
-        ->with('info','Berhasil hapus data menu');
+         return view('wisata.index');
     }
 }
