@@ -18,11 +18,8 @@
         </div>
     </section>
     <section class="content">
-        @if($message= session('info'))
-            <div class="alert alert-success">
-                <i class="fa fa-info-circle"></i>{{ $message }}
-            </div>
-        @endif
+       
+        
         <div class="card">
             <div class="card-header bg-primary text-white">
                 <h3 class="card-title">List Wisata</h3>
@@ -37,35 +34,37 @@
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th>Kode Wisata</th>
-                            <th>Nama Wisata</th>
-                            <th>Lokasi</th>
-                            <th>Status</th>
+                            <th>Kode Kendaraan</th>
+                            <th>Type Kendaraan</th>
+                            <th>Seat</th>
+                            <th>Harga</th>
                             <th colspan="2">Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                       
+                        
                         <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td><a href="{{ route("wisata.create") }}" class="btn btn-warning btn-block"><i class="fa fa-pencil-alt"></i>Ubah</a></td>
-                            <td>
-                                <form action="" method="">
+                           <td></td>
+                           <td></td>
+                           <td></td>
+                           <td></td>
+                           <td></td>
 
+                            <td><a href="{{ route('wisata.create') }}" class="btn btn-warning btn-block"><i class="fa fa-pencil-alt"></i>Ubah</a></td>
+                            <td>
+                                <form action="{{ route('wisata.index') }}">
+                                    
                                     <button class="btn btn-danger btn-block">
                                             <i class="fa fa-trash">Hapus</i>
                                     </button>
                                 </form>
                             </td>
                         </tr>
-                     
+                      
                     </tbody>
                 </table>
                 <div class="float-right mt-2">
-                  
+                    
                 </div>
             </div>
         </div>

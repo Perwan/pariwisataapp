@@ -1,18 +1,18 @@
 @extends('main')
 
-@section('title','Form Kendaraan')
+@section('title','History')
 
 @section('content')
 <div class="content-wrapper">
     <div class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
-                <div class="col-6"><h1>Kendaraan</h1></div>
+                <div class="col-6"><h1>History</h1></div>
                 <div class="col-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="{{ route("home") }}">Home</a></li>
-                        <li class="breadcrumb-item"><a href="{{ route("kendaraan.index") }}">List Kendaraan</a></li>
-                        <li class="breadcrumb-item active">Form Kendaraan</li>
+                        <li class="breadcrumb-item"><a href="{{ route("kendaraan.index") }}">List History</a></li>
+                        <li class="breadcrumb-item active">Form History</li>
                     </ol>
                 </div>
             </div>
@@ -21,14 +21,14 @@
     <div class="content">
         <div class="card">
             <div class="card-header bg-primary text-white">
-                <h3 class="card-title">Form Kendaraan</h3>
+                <h3 class="card-title">Form History</h3>
             </div>
             <div class="card-body">
                 <form action="" method="POST" autocomplete="off">
                     @csrf
                    
                     <div class="form-group">
-                        <label for="kodekendaraan">Kode Kendaraan</label>
+                        <label for="kodekendaraan">Kode History</label>
                         <input type="text" class="form-control @error('kode') is-invalid @enderror" name="kodekendaraan" value="" maxlength="20">
                         @error('kodekendaraan')
                             <div class="invalid-feedback">
@@ -37,7 +37,7 @@
                         @enderror
                     </div>
                     <div class="form-group">
-                        <label for="type">Type Kendaraan</label>
+                        <label for="type">Type History</label>
                         <input type="text" name="type" class="form-control @error('type') is-invalid @enderror" id="" maxlength="100">
                         @error('namakendaraan')
                             <div class="invalid-feedback">

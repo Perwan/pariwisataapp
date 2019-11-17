@@ -82,7 +82,7 @@
                         <div class="inner">
                             <h3>65</h3>
 
-                            <p>History Pesanan</p>
+                            <p>History Transaksi</p>
                         </div>
                         <div class="icon">
                             <i class="ion ion-pie-graph"></i>

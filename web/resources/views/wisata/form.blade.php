@@ -24,31 +24,26 @@
                 <h3 class="card-title">Form Wisata</h3>
             </div>
             <div class="card-body">
-                <form action="" method="POST" autocomplete="off">
+                <form action={{ route('wisata.index') }} method="POST" autocomplete="off">
                     @csrf
                    
                     <div class="form-group">
-                        <label for="kodekendaraan">Kode Wisata</label>
-                        <input type="text" class="form-control @error('nama') is-invalid @enderror" name="kodekendaraan" value="" maxlength="20">
-                        @error('kodeewisata')
+                        <label for="kodekendaraan">Kode Kendaraan</label>
+                        <input type="text" class="form-control @error('nama') is-invalid @enderror" name="kodekendaraan" value="{{ (isset($data)?$data->kodekendaraan:old('kodekendaraan')) }}" maxlength="20">
+                        @error('kodekendaraan')
                             <div class="invalid-feedback">
                                 {{ $message }}
                             </div>
                         @enderror
                     </div>
                     <div class="form-group">
-                        <label for="nama">Nama Wisata</label>
-                        <input type="text" name="nama" class="form-control @error('nama') is-invalid @enderror" id="" maxlength="100">
-                        @error('namawisata')
-                            <div class="invalid-feedback">
-                                {{ $message }}
-                            </div>
-                        @enderror
+                        <label for="type">Type Kendaraan</label>
+                        
                     </div>
                     <div class="form-group">
-                        <label for="lokasi">Lokasi</label>
-                        <input type="text" class="form-control @error('lokasi') is-invalid @enderror" name="lokasi" value="" maxlength="100">
-                        @error('lokasi')
+                        <label for="seat">Seat</label>
+                        <input type="text" class="form-control @error('seat') is-invalid @enderror" name="seat" value="{{ (isset($data)?$data->seat:old('seat')) }}" maxlength="6">
+                        @error('seat')
                             <div class="invalid-feedback">
                                 {{ $message }}
                             </div>
@@ -57,12 +52,16 @@
                            
                     </div>
                     <div class="form-group">
-                        <label for="harga">Status</label>
-                        <input type="text" class="form-control" name="harga" value="" >
-                       
+                        <label for="harga">Harga</label>
+                        <input type="text" class="form-control @error('harga') is-invalid @enderror" name="harga" value="{{ (isset($data)?$data->harga:old('harga')) }}" maxlength="6">
+                        @error('harga')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
                     </div>
                     <div class="form-group float-right">
-                        <button type="submit" class="btn btn-success"><i class="fa fa-save"></i>Simpan</button>
+                    <a href="{{ route("wisata.index") }}" class="btn btn-success"><i class="fa fa-save"></i>Simpan</a>
                         <a href="{{ route("wisata.index") }}" class="btn btn-danger"><i class="fa fa-arrow-left"></i>Batal</a>
                     </div>
                 </form>

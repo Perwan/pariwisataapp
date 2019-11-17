@@ -17,7 +17,7 @@ class wisata extends Model
         return $typekendaraan;
     }
 
-    protected $table="tblwisata";
+   
 
-    protected $fillable = ['kodekendaraan','type','seat','harga'];
+    protected $fillable = ['kodewisata','namawisata','lokasi'];
 }
