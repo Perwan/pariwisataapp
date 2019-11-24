@@ -37,18 +37,17 @@
                             <th>Kode Wisata</th>
                             <th>Nama Wisata</th>
                             <th>Lokasi</th>
-                            <th>Harga</th>
                             <th colspan="2">Action</th>
                         </tr>
                     </thead>
                     <tbody>
                         
                         <tr>
-                           <td></td>
-                           <td></td>
-                           <td></td>
-                           <td></td>
-                           <td></td>
+                           <td>1</td>
+                           <td>DTS</td>
+                           <td>Danau Toba Samosir</td>
+                           <td>Samosir Pangururuan</td>
+                        
 
                             <td><a href="{{ route('wisata.create') }}" class="btn btn-warning btn-block"><i class="fa fa-pencil-alt"></i>Ubah</a></td>
                             <td>

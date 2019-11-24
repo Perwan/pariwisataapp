@@ -35,23 +35,27 @@
                         <tr>
                             <th>No</th>
                             <th>Kode Kendaraan</th>
+                            <th>Nama Kendaraan</th>
                             <th>Type Kendaraan</th>
                             <th>Seat</th>
-                            <th>Harga</th>
+                            <th>Harga/Hari</th>
                             <th colspan="2">Action</th>
                         </tr>
                     </thead>
                     <tbody>
                         
                         <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            <td>1</td>
+                            <td>MCB</td>
+                            <td>Mercedes Benz</td>
+                            <td>Bus</td>
+                            <td>50</td>
+                            <td>Rp 1.000.000</td>
                             <td>
-                                <form action="" method="">
+                            <form action="" method="">
 
-                            <td><a href="{{ route('kendaraan.create') }}" class="btn btn-warning btn-block"><i class="fa fa-pencil-alt"></i>Ubah</a></td>
+                           <a href="{{ route('kendaraan.create') }}" class="btn btn-warning btn-block">
+                            <i class="fa fa-pencil-alt"></i>Ubah</a></td>
                             <td>
                                 <form action="{{ route('kendaraan.index') }}">
                                     

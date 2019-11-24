@@ -43,10 +43,18 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route("history.index") }}" class="nav-link">
+                    <a href="{{ route("transaksi.index") }}" class="nav-link">
+                        <i class="nav-icon fas fa-dollar-sign"></i>
+                        <p>
+                           Transaksi
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route("pelanggan.index") }}" class="nav-link">
                         <i class="nav-icon fas fa-address-card"></i>
                         <p>
-                            History Transaksi
+                           Data Pelanggan
                         </p>
                     </a>
                 </li>

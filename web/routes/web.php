@@ -23,7 +23,9 @@ Route::get('/home', function () {
 
 Route::resource('wisata','wisatacontroller');
 Route::resource('kendaraan','kendaraancontroller');
-Route::resource('history','historycontroller');
+Route::resource('transaksi','transaksicontroller');
+Route::resource('pelanggan','pelanggancontroller');
+Route::resource('pembayaran','pembayarancontroller');
 
 Route::get("register",function(){
     return view('pages.register');
