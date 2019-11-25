@@ -1,6 +1,6 @@
 # ERD
 
-
+![erd-pariwisata](https://user-images.githubusercontent.com/55711189/69513174-7ebd0e00-0f79-11ea-8bdf-f8e4e033fe69.png)
 
 
 # Sistem Informasi Pariwisata dan Travel
