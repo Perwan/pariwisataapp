@@ -1,6 +1,7 @@
 # ERD
 
-![erd-pariwisata](https://user-images.githubusercontent.com/55711189/69497369-adea6580-0f0e-11ea-99c2-ad4767a4e184.png)
+
+
 
 # Sistem Informasi Pariwisata dan Travel
 Sistem Informasi Pariwisata dan Travel bertujuan untuk membuat para pelanggan dapat melihat destinasi wisata yang ingin mereka kunjungi melalui aplikasi disertai dengan alat akomodasi seperti minibus dan bus.
