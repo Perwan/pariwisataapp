@@ -16,7 +16,7 @@
             </div>
             <div class="info">
                 <a href="" class="d-block">
-                    User
+                    {{ucfirst(Auth::user()->name)}}
                 </a>
             </div>
         </div>

@@ -19,7 +19,11 @@
     </section>
     <section class="content">
        
-        
+        @if ($message = session("info"))
+        <div class="alert alert-success">
+            <i class="fa fa-info-circle"></i> {{ $message }}
+        </div>
+    @endif
         <div class="card">
             <div class="card-header bg-primary text-white">
                 <h3 class="card-title">List Kendaraan</h3>
@@ -43,25 +47,28 @@
                         </tr>
                     </thead>
                     <tbody>
-                        
+                        @foreach ($data as $item)
                         <tr>
-                            <td>1</td>
-                            <td>MCB</td>
-                            <td>Mercedes Benz</td>
-                            <td>Bus</td>
-                            <td>50</td>
-                            <td>Rp 1.000.000</td>
+                            <td>{{ $loop->iteration + (10*($data->currentPage()-1)) }}</td>
+                            <td>{{ $item->kode }}</td>
+                            <td>{{ $item->nama }}</td>
+                            <td>{{ $item->type }}</td>
+                            <td>{{ $item->seat }}</td>
+                            <td>{{ $item->harga }}</td>
+                            <td><a href="{{ route("kendaraan.show",[$item->id]) }}" class="btn btn-warning btn-block"><i class="fa fa-pencil-alt"></i> Rubah</a></td>
                             <td>
-                            <form action="" method="">
-
-                           <a href="{{ route('kendaraan.create') }}" class="btn btn-warning btn-block">
-                            <i class="fa fa-pencil-alt"></i>Ubah</a></td>
-                            <td>
-                                <form action="{{ route('kendaraan.index') }}">
-                                    
-                                    <button class="btn btn-danger btn-block">
-                                            <i class="fa fa-trash">Hapus</i>
+                                <form action="{{ route("kendaraan.destroy",[$item->id]) }}"
+                                    method="POST">
+                                    @method("delete")
+                                    @csrf
+                                    <button type="submit"
+                                        class="btn btn-danger btn-block">
+                                        <i class="fa fa-trash"></i> Hapus
                                     </button>
+                                </form>
+                            </td>
+                        </tr>
+                    @endforeach
                                 </form>
                             </td>
                         </tr>

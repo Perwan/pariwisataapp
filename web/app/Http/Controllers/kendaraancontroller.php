@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\kendaraan;
+
 class kendaraancontroller extends Controller
 {
     /**
@@ -13,8 +14,8 @@ class kendaraancontroller extends Controller
      */
     public function index()
     {
-        //
-         return view('kendaraan.list');
+        $data = kendaraan::paginate(10);
+        return view("kendaraan.list",compact("data"));
     }
 
     /**
@@ -24,7 +25,6 @@ class kendaraancontroller extends Controller
      */
     public function create()
     {
-        //
         return view('kendaraan.form');
     }
 
@@ -36,8 +36,23 @@ class kendaraancontroller extends Controller
      */
     public function store(Request $request)
     {
-        //
-        return view('kendaraan.index');
+        $request->validate([
+            'kode' => 'required|max:10',
+            'nama' => 'required|max:100',
+            'type' => 'required|max:10',
+            'seat' => 'required|max:3',
+            'harga' => 'required|max:20'
+        ]);
+        $kendaraan = new kendaraan;
+        $kendaraan->kode = $request->kode;
+        $kendaraan->nama = $request->nama;
+        $kendaraan->type = $request->type;
+        $kendaraan->seat = $request->seat;
+        $kendaraan->harga = $request->harga;
+        $kendaraan->save();
+
+        $request->session()->flash("info","Berhasil Tambah Data Kendaraan");
+        return redirect()->route("kendaraan.index");
     }
 
     /**
@@ -48,8 +63,8 @@ class kendaraancontroller extends Controller
      */
     public function show($id)
     {
-        //
-        return view('kendaraan.form');
+        $data = kendaraan::find($id);
+        return view("kendaraan.form",compact("data"));
     }
 
     /**
@@ -72,9 +87,20 @@ class kendaraancontroller extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
-        return view('kendaraan.index');
+        $request->validate([
+            'kode' => 'required|max:10',
+            'nama' => 'required|max:100',
+            'type' => 'required|max:10',
+            'seat' => 'required|max:3',
+            'harga' => 'required|max:20'
+        ]);
 
+    kendaraan::where("id",$id)
+            ->update($request->except(["_token","_method"]));
+
+    $request->session()->flash("info","Berhasil Rubah Data Kendaraan");
+
+    return redirect()->route("kendaraan.index");
     }
 
     /**
@@ -85,7 +111,9 @@ class kendaraancontroller extends Controller
      */
     public function destroy($id)
     {
-        //
-        return view('kendaraan.index');
+        kendaraan::destroy($id);
+
+        return redirect()->route("kendaraan.index")
+            ->with("info","Berhasil Hapus Data Kendaraan");
     }
 }

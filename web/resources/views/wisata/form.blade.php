@@ -24,13 +24,20 @@
                 <h3 class="card-title">Form Wisata</h3>
             </div>
             <div class="card-body">
-                <form action={{ route('wisata.index') }} method="POST" autocomplete="off">
+                <form action={{ isset($data)
+                                    ?route("wisata.update",[$data->id])
+                                    :route("wisata.store") }}
+                    method="POST" autocomplete="off">
                     @csrf
-                   
+                    @if (isset($data))
+                        @method("PUT")
+                    @endif
                     <div class="form-group">
-                        <label for="kodewisata">Kode Wisata</label>
-                        <input type="text" class="form-control @error('namkodea') is-invalid @enderror" name="kodewisata" value="" maxlength="20">
-                        @error('kodewisata')
+                        <label for="kode">Kode Wisata</label>
+                        <input type="text"
+                            class="form-control @error("kode") is-invalid @enderror"
+                            name="kode" value='{{ (isset($data)?$data->kode:old("kode")) }}' placeholder="Masukkan Kode Wisata">
+                        @error("kode")
                             <div class="invalid-feedback">
                                 {{ $message }}
                             </div>
@@ -38,8 +45,10 @@
                     </div>
                     <div class="form-group">
                         <label for="nama">Nama Wisata</label>
-                        <input type="text" class="form-control @error('nama') is-invalid @enderror" name="nama" value="" >
-                        @error('nama')
+                        <input type="text"
+                            class="form-control @error("nama") is-invalid @enderror"
+                            name="nama" value='{{ isset($data)?$data->nama:old("nama") }}' placeholder="Masukkan Nama Wisata">
+                        @error("nama")
                             <div class="invalid-feedback">
                                 {{ $message }}
                             </div>
@@ -47,24 +56,29 @@
                     </div>
                     <div class="form-group">
                         <label for="lokasi">Lokasi</label>
-                        <input type="text" class="form-control @error('lokasi') is-invalid @enderror" name="lokasi" value="" >
-                        @error('lokasi')
+                        <input type="text"
+                            class="form-control @error("lokasi") is-invalid @enderror"
+                            name="lokasi" value='{{ isset($data)?$data->lokasi:old("lokasi") }}' placeholder="Masukkan Lokasi">
+                        @error("lokasi")
                             <div class="invalid-feedback">
                                 {{ $message }}
                             </div>
                         @enderror
-                           
-                           
                     </div>
                    
                     <div class="form-group float-right">
-                    <a href="{{ route("wisata.index") }}" class="btn btn-success"><i class="fa fa-save"></i>Simpan</a>
-                        <a href="{{ route("wisata.index") }}" class="btn btn-danger"><i class="fa fa-arrow-left"></i>Batal</a>
+                        <button type="submit" class="btn btn-success">
+                            <i class="fa fa-save"></i> Simpan
+                        </button>
+                        <a href="{{ route("wisata.index") }}" class="btn btn-danger">
+                            <i class="fa fa-arrow-left"></i> Batal
+                        </a>
                     </div>
                 </form>
             </div>
         </div>
+
+       
     </div>
 </div>
-    
 @endsection

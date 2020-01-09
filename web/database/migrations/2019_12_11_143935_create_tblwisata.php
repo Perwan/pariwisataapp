@@ -15,10 +15,9 @@ class CreateTblwisata extends Migration
     {
         Schema::create('tblwisata', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('kodekendaraan',20);
-            $table->enum('type',['m','b']);
-            $table->integer('seat');
-            $table->integer('harga');
+            $table->string("kode");
+            $table->string("nama");
+            $table->string("lokasi");
             $table->timestamps();
         });
     }

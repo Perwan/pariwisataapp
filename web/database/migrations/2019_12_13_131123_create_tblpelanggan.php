@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTbltransportasi extends Migration
+class CreateTblpelanggan extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,14 @@ class CreateTbltransportasi extends Migration
      */
     public function up()
     {
-        Schema::create('tbltransportasi', function (Blueprint $table) {
+        Schema::create('tblpelanggan', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string("kode");
             $table->string("nama");
-            $table->string("type");
-            $table->string("seat");
-            $table->string("harga");
+            $table->string("nonik");
+            $table->string("alamat");
+            $table->string("jenis");
+            $table->string("telepon");
             $table->timestamps();
         });
     }
@@ -31,6 +32,6 @@ class CreateTbltransportasi extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tbltransportasi');
+        Schema::dropIfExists('tblpelanggan');
     }
 }

@@ -7,5 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class kendaraan extends Model
 {
     //
-    protected $fillable = ['kodekendaraan','type','seat','harga'];
+    protected $table="tbltransportasi";
+    protected $fillable = ['kode','nama','type','seat','harga'];
 }

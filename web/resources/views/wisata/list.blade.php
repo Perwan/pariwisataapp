@@ -18,56 +18,60 @@
         </div>
     </section>
     <section class="content">
-       
-        
+        @if ($message = session("info"))
+            <div class="alert alert-success">
+                <i class="fa fa-info-circle"></i> {{ $message }}
+            </div>
+        @endif
         <div class="card">
             <div class="card-header bg-primary text-white">
                 <h3 class="card-title">List Wisata</h3>
             </div>
             <div class="card-body">
                 <div class="float-right mb-2">
-                    <a href="{{ route('wisata.create') }}" class="btn btn-success">
-                        <i class="fa fa-plus">Tambah</i>
-                    </a>
+                    <a href="{{ route("wisata.create") }}" class="btn btn-success">
+                        <i class="fa fa-plus"></i> Tambah</a>
                 </div>
                 <table class="table table-bordered">
                     <thead>
                         <tr>
-                            <th>No</th>
+                            <th>No.</th>
                             <th>Kode Wisata</th>
                             <th>Nama Wisata</th>
                             <th>Lokasi</th>
-                            <th colspan="2">Action</th>
+                         
+                            <th colspan=2>Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        
-                        <tr>
-                           <td>1</td>
-                           <td>DTS</td>
-                           <td>Danau Toba Samosir</td>
-                           <td>Samosir Pangururuan</td>
-                        
-
-                            <td><a href="{{ route('wisata.create') }}" class="btn btn-warning btn-block"><i class="fa fa-pencil-alt"></i>Ubah</a></td>
-                            <td>
-                                <form action="{{ route('wisata.index') }}" method="">
-                                    
-                                    <button class="btn btn-danger btn-block">
-                                            <i class="fa fa-trash">Hapus</i>
-                                    </button>
-                                </form>
-                            </td>
-                        </tr>
-                      
+                        @foreach ($data as $item)
+                            <tr>
+                                <td>{{ $loop->iteration + (10*($data->currentPage()-1)) }}</td>
+                                <td>{{ $item->kode }}</td>
+                                <td>{{ $item->nama }}</td>
+                                <td>{{ $item->lokasi }}</td>
+                                <td><a href="{{ route("wisata.show",[$item->id]) }}" class="btn btn-warning btn-block"><i class="fa fa-pencil-alt"></i> Rubah</a></td>
+                                <td>
+                                    <form action="{{ route("wisata.destroy",[$item->id]) }}"
+                                        method="POST">
+                                        @method("delete")
+                                        @csrf
+                                        <button type="submit"
+                                            class="btn btn-danger btn-block">
+                                            <i class="fa fa-trash"></i> Hapus
+                                        </button>
+                                    </form>
+                                </td>
+                            </tr>
+                        @endforeach
                     </tbody>
                 </table>
                 <div class="float-right mt-2">
-                    
+                    {{ $data->links() }}
                 </div>
             </div>
         </div>
-        
+
     </section>
 </div>
 @endsection

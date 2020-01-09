@@ -14,8 +14,8 @@ class wisatacontroller extends Controller
      */
     public function index()
     {
-       
-        return view('wisata.list');
+        $data = wisata::paginate(10);
+        return view("wisata.list",compact("data"));
     }
 
     /**
@@ -37,7 +37,21 @@ class wisatacontroller extends Controller
     public function store(Request $request)
     {
 
-        return view('wisata.index');
+        $request->validate([
+            'kode' => 'required|max:10',
+            'nama' => 'required|max:100',
+            'lokasi' => 'required|max:100'
+        ]);
+        $wisata = new wisata;
+        $wisata->kode = $request->kode;
+        $wisata->nama = $request->nama;
+        $wisata->lokasi = $request->lokasi;
+        $wisata->save();
+
+        $request->session()->flash("info","Berhasil Tambah Data Wisata");
+        return redirect()->route("wisata.index");
+
+        
     }
 
     /**
@@ -48,7 +62,8 @@ class wisatacontroller extends Controller
      */
     public function show($id)
     {
-        return view('wisata.form');
+        $data = wisata::find($id);
+        return view("wisata.form",compact("data"));
     }
 
     /**
@@ -72,7 +87,18 @@ class wisatacontroller extends Controller
      */
     public function update(Request $request, $id)
     {
-        return view('wisata.index');
+        $request->validate([
+            'kode' => 'required|max:10',
+            'nama' => 'required|max:100',
+            'lokasi' => 'required|max:100'
+        ]);
+
+    wisata::where("id",$id)
+            ->update($request->except(["_token","_method"]));
+
+    $request->session()->flash("info","Berhasil Rubah Data Wisata");
+
+    return redirect()->route("wisata.index");
     }
 
     /**
@@ -83,6 +109,9 @@ class wisatacontroller extends Controller
      */
     public function destroy($id)
     {
-         return view('wisata.index');
+        wisata::destroy($id);
+
+        return redirect()->route("wisata.index")
+            ->with("info","Berhasil Hapus Data Wisata");
     }
 }

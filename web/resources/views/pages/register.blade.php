@@ -3,14 +3,14 @@
 @section('content')
 <div class="register-box">
     <div class="register-logo">
-        <a href="{{ url("/") }}"><b>Travel & Pariwisata</a>
+        <a href="{{ url("/") }}">Travel & Pariwisata</a>
     </div>
 
     <div class="card">
         <div class="card-body register-card-body">
             <p class="login-box-msg">Register a new membership</p>
 
-            <form action="{{ route('register') }}" method="">
+            <form action="{{ route('register') }}" method="post">
                 @csrf
                 <div class="form-group">
                     <div class="input-group mb-3">
